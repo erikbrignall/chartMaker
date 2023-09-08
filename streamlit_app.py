@@ -39,14 +39,17 @@ def extract_values(obj, key):
         results = extract(obj, arr, key)
         return results
 
-messages=[
-        {"role": "system", "content": "You are a data analyst who needs to take a request for a chart and convert that into specific parameters. The parameters are: Type: bar/pie/line, Dimension: time/channel/device, Metric: Sessions/ Users/ Revenue/ Transactions/ CVR, StartDate: [yyyy/mm/dd], End Date: [yyyy/mm/dd]. Todays date is 2023/09/07. Where a date range is not specified use a start date of 31 days ago and end date of yesterday The response should be a JSON object of these parameters. When a line chart is requested the dimension should be time and we should add a parameter for breakdown dimension called BreakdownDimension. "},
-        {"role": "user", "content": query_text}
-        ]
+
     
     
 if query_text is not None:   
+        print("we have a query now")
         # FETCH RESPONSE
+
+        messages=[
+        {"role": "system", "content": "You are a data analyst who needs to take a request for a chart and convert that into specific parameters. The parameters are: Type: bar/pie/line, Dimension: time/channel/device, Metric: Sessions/ Users/ Revenue/ Transactions/ CVR, StartDate: [yyyy/mm/dd], End Date: [yyyy/mm/dd]. Todays date is 2023/09/07. Where a date range is not specified use a start date of 31 days ago and end date of yesterday The response should be a JSON object of these parameters. When a line chart is requested the dimension should be time and we should add a parameter for breakdown dimension called BreakdownDimension. "},
+        {"role": "user", "content": query_text}
+        ]
         
         response = openai.ChatCompletion.create(
             model='gpt-3.5-turbo',
