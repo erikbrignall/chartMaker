@@ -60,9 +60,12 @@ if query_text is not None:
         
         response_text = response.choices[0].message.content
         response_text = response_text.replace('\n', ' ').lower()
+
+        LLMresponse = response_text
+        st.write("so the thinking is done")
+        st.write(LLMresponse
         
-        
-        print(response_text)
+        #print(response_text)
         ## extract individual elements from response
         
         ## TITLE
