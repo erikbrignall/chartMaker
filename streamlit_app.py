@@ -62,8 +62,8 @@ if query_text is not None:
         response_text = response_text.replace('\n', ' ').lower()
 
         LLMresponse = response_text
-        st.write("so the thinking is done")
-        st.write(LLMresponse)
+        st.write("Here is the JSON for the chart generation:")
+        st.json(LLMresponse)
         
         ## extract individual elements from response
         
