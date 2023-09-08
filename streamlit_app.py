@@ -63,9 +63,8 @@ if query_text is not None:
 
         LLMresponse = response_text
         st.write("so the thinking is done")
-        st.write(LLMresponse
+        st.write(LLMresponse)
         
-        #print(response_text)
         ## extract individual elements from response
         
         ## TITLE
