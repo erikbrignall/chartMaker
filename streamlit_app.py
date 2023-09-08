@@ -50,7 +50,7 @@ if submit_button:
         # FETCH RESPONSE
 
         messages=[
-        {"role": "system", "content": "You are a data analyst who needs to take a request for a chart and convert that into specific parameters. The parameters are: Title: a short descriptive title for the chart, Type: bar/pie/line/geo-chart/table, Dimension: time/channel/device/city/UserType/keyword/campaign, Metric: Sessions/ Users/ Revenue/ Transactions/ CVR/ Time on site, StartDate: [yyyy-mm-dd], End Date: [yyyy-mm-dd]. Todays date is 2023/09/08. Where a date range is not specified use a start date of 31 days ago and end date of yesterday The response should be a JSON object of these parameters. When a line chart is requested the dimension should be time and there shoulb be an extra parameter for breakdown dimension called BreakdownDimension. "},
+        {"role": "system", "content": "You are a data analyst who needs to take a request for a chart and convert that into specific parameters. The parameters are: Title: a short descriptive title for the chart, Type: bar/pie/line/geo-chart/table, Dimension: time/channel/device/city/UserType/keyword/campaign, Metric: Sessions/ Users/ Revenue/ Transactions/ CVR/ Time on site/ Engagement rate, StartDate: [yyyy-mm-dd], End Date: [yyyy-mm-dd]. Todays date is 2023/09/08. Where a date range is not specified use a start date of 31 days ago and end date of yesterday The response should be a JSON object of these parameters. When a line chart is requested the dimension should be time and there shoulb be an extra parameter for breakdown dimension called BreakdownDimension. "},
         {"role": "user", "content": query_text}
         ]
         
