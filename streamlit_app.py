@@ -15,8 +15,11 @@ st.write('The following is a demo of the use of LLMs to generate parameters for 
 openai.api_key = st.secrets["OpenAIapikey"]
 
 # Input Query
-st.write('Please input your query to generate the appropriate chart:')
-query_text = st.text_input('Enter Query')
+with st.form(key='my_form_to_submit'):
+    st.write('Please input your query to generate the appropriate chart:')
+    query_text = st.text_input('Enter Query')
+    submit_button = st.form_submit_button(label='Submit')
+
 
 ## The below function loops through the JSON structure and returns any value matching the key
 def extract_values(obj, key):
@@ -41,8 +44,8 @@ def extract_values(obj, key):
 
 
     
-    
-if query_text is not None:   
+if submit_button:    
+#if query_text is not None:   
         print("we have a query now")
         # FETCH RESPONSE
 
