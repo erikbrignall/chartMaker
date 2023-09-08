@@ -45,35 +45,35 @@ messages=[
         ]
     
     
-    
-# FETCH RESPONSE
-
-response = openai.ChatCompletion.create(
-    model='gpt-3.5-turbo',
-    temperature = 0.1,
-    stop = None,
-    messages=messages)
-
-
-response_text = response.choices[0].message.content
-response_text = response_text.replace('\n', ' ').lower()
-
-
-print(response_text)
-## extract individual elements from response
-
-## TITLE
-#pattern = r'title: (.*?)summary:'
-#match = re.findall(pattern, response_text)
-#art_title = match[0]
-
-## SUMMARY
-#pattern = r'summary: (.*?)places:'
-#match = re.findall(pattern, response_text)
-#art_summary = match[0]
-
-## PLACES
-#pattern = r'places: (.*)'
-#match = re.findall(pattern, response_text)
-#places = match[0]
-#placeurl = quote(places)
+if query_text is not None:   
+        # FETCH RESPONSE
+        
+        response = openai.ChatCompletion.create(
+            model='gpt-3.5-turbo',
+            temperature = 0.1,
+            stop = None,
+            messages=messages)
+        
+        
+        response_text = response.choices[0].message.content
+        response_text = response_text.replace('\n', ' ').lower()
+        
+        
+        print(response_text)
+        ## extract individual elements from response
+        
+        ## TITLE
+        #pattern = r'title: (.*?)summary:'
+        #match = re.findall(pattern, response_text)
+        #art_title = match[0]
+        
+        ## SUMMARY
+        #pattern = r'summary: (.*?)places:'
+        #match = re.findall(pattern, response_text)
+        #art_summary = match[0]
+        
+        ## PLACES
+        #pattern = r'places: (.*)'
+        #match = re.findall(pattern, response_text)
+        #places = match[0]
+        #placeurl = quote(places)
