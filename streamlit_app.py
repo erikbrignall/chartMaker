@@ -63,7 +63,8 @@ if submit_button:
         Filter Direction: If a filter is used specify order of filter ascending or descending,\
         Todays date is 2023/09/08. Where a date range is not specified use a start date of 31 days ago and end date of yesterday,\
         The response should be a JSON object of these parameters.\
-        When a line chart is requested the dimension should be time and there shoulb be an extra parameter for breakdown dimension called BreakdownDimension. "},
+        When a line chart is requested the dimension should be time and there should be an extra parameter for breakdown dimension called BreakdownDimension.\
+        When a table is requested multiple dimensions or metrics can be listed in a comma seperated format against the Dimension or Metric parameters"},
         {"role": "user", "content": query_text}
         ]
         
