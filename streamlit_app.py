@@ -67,7 +67,7 @@ if submit_button:
         The response should be a JSON object of these parameters.\
         When a line or bar chart is requested, the default dimension should be time, and the extra parameter included for the breakdown dimension called BreakdownDimension.\
         When two metrics are used in a bar or line chart y_axis_key can show multiple metrics seperated by commas.\
-        When a table is requested multiple dimensions or metrics can be listed in a comma seperated format against the Dimension or Metric parameters"}\
+        When a table is requested multiple dimensions or metrics can be listed in a comma seperated format against the Dimension or Metric parameters"},\
         {"role": "user", "content": query_text}
         ]
         
