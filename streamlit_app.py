@@ -62,7 +62,7 @@ if submit_button:
         Filter: if a filter is require specify dimension of filter,\
         Filter Quantity: If a filter is based on a number specify this,\
         Filter Direction: If a filter is used specify order of filter ascending or descending,\
-        Chart Template: A template is selected depending on the type of chart returned. Templates are 'Trend', for any time based charts, 'Table' for tables and if neither of these is appropriate 'default' can be set,\ 
+        Chart Template: A template is selected depending on the type of chart returned. Templates are Trend, for any time based charts, Table for tables and if neither of these is appropriate 'default' can be set,\ 
         Todays date is 2023/09/08. Where a date range is not specified use a start date of 31 days ago and end date of yesterday,\
         The response should be a JSON object of these parameters.\
         When a line or bar chart is requested, the default dimension should be time, and the extra parameter included for the breakdown dimension called BreakdownDimension.\
