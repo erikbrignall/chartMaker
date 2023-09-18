@@ -55,16 +55,17 @@ if submit_button:
         name: a short descriptive title for the chart,\
         type: bar/pie/line/geo-chart/table,\
         dimension: date/location/browser/OS/Device/Browser/Channel/UserType/Country/Region/City/Source/Campaign/Medium/Page/Landing Page/Product/Category/Brand/Landing Page/Lead Type,\
-        breakdown dimension: for line or bar charts only that use a date dimension the breakdown dimension will be one of the other dimensions,\
-        y_axis_key: Sessions/ Effective sessions/ Users/ Revenue/ Transactions/ CVR/ Time on site/ Engagement rate,\
+        breakdown dimension: an extra parameter only for line or bar charts that use a time primary dimension. The breakdown dimension will be one of the other non time dimensions,\
+        y_axis_key: Sessions/ Effective sessions/ Users/ Revenue/ Transactions/ CVR/ Time on site/ Engagement rate/ROI,\
         StartDate: [yyyy-mm-dd], \
         End Date: [yyyy-mm-dd], \
         Filter: if a filter is require specify dimension of filter,\
         Filter Quantity: If a filter is based on a number specify this,\
         Filter Direction: If a filter is used specify order of filter ascending or descending,\
+        Chart Template: A template is selected depending on the type of chart returned. Templates are 'Trend', for any time based charts, 'Table' for tables and if neither of these is appropriate 'default' can be set,\ 
         Todays date is 2023/09/08. Where a date range is not specified use a start date of 31 days ago and end date of yesterday,\
         The response should be a JSON object of these parameters.\
-        When a line or bar chart is requested, the default dimension should be time, and there should be an extra parameter included for the breakdown dimension called BreakdownDimension.\
+        When a line or bar chart is requested, the default dimension should be time, and the extra parameter included for the breakdown dimension called BreakdownDimension.\
         When a table is requested multiple dimensions or metrics can be listed in a comma seperated format against the Dimension or Metric parameters"},
         {"role": "user", "content": query_text}
         ]
