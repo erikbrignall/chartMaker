@@ -54,8 +54,9 @@ if submit_button:
         The parameters are: \
         name: a short descriptive title for the chart,\
         type: bar/pie/line/geo-chart/table,\
-        dimension: session/location/browser/OS/Device/Channel/Country/Region/City/Source/Campaign/Medium/Page/Landing Page/Product/Category/Brand/Landing Page/Lead Type,\
-        y_axis_key: Sessions/ Users/ Revenue/ Transactions/ CVR/ Time on site/ Engagement rate,\
+        dimension: date/location/browser/OS/Device/Browser/Channel/UserType/Country/Region/City/Source/Campaign/Medium/Page/Landing Page/Product/Category/Brand/Landing Page/Lead Type,\
+        breakdown dimension: for line or bar charts only that use a date dimension the breakdown dimension will be one of the other dimensions,\
+        y_axis_key: Sessions/ Effective sessions/ Users/ Revenue/ Transactions/ CVR/ Time on site/ Engagement rate,\
         StartDate: [yyyy-mm-dd], \
         End Date: [yyyy-mm-dd], \
         Filter: if a filter is require specify dimension of filter,\
@@ -63,7 +64,7 @@ if submit_button:
         Filter Direction: If a filter is used specify order of filter ascending or descending,\
         Todays date is 2023/09/08. Where a date range is not specified use a start date of 31 days ago and end date of yesterday,\
         The response should be a JSON object of these parameters.\
-        When a line or bar chart is requested, the default dimension should be time unless otherwise specified, and there should be an extra parameter for the breakdown dimension called BreakdownDimension.\
+        When a line or bar chart is requested, the default dimension should be time, and there should be an extra parameter included for the breakdown dimension called BreakdownDimension.\
         When a table is requested multiple dimensions or metrics can be listed in a comma seperated format against the Dimension or Metric parameters"},
         {"role": "user", "content": query_text}
         ]
