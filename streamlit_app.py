@@ -68,7 +68,7 @@ if submit_button:
         When a line or bar chart is requested, the default dimension should be date, and the extra parameter included for the breakdown dimension called BreakdownDimension.\
         When two metrics are used in a bar or line chart the y_axis_key can show two metrics seperated by commas.\
         When a table requires multiple dimensions or metrics to be defined, these can be listed in a comma seperated format with a maximum of 2 dimensions and 4 metrics returned.\
-        If the request is too vague to make a clear decision on parameters please return only a parameter called follow-up: with a qualifying question such as please specify what you would like to see in a bit more detail."},\
+        The dimension parameter and y_axis_key must always contain at least 1 value."},\
         {"role": "user", "content": query_text}
         ]
         
