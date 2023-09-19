@@ -54,8 +54,8 @@ if submit_button:
         The parameters are: \
         name: a short descriptive title for the chart,\
         type: bar/pie/line/geo-chart/table,\
-        dimension: date/location/browser/OS/Device/Browser/Channel/UserType/Country/Region/City/Source/Campaign/Medium/Page/Landing Page/Product/Category/Brand/Landing Page/Lead Type,\
-        breakdown dimension: an extra parameter only for line or bar charts that use a time primary dimension. The breakdown dimension will be one of the other non time dimensions,\
+        dimension: date/location/browser/OS/Device/Browser/Channel/UserType (New or Returning Users/Country/Region/City/Source/Campaign/Medium/Page/Landing Page/Product/Category/Brand/Landing Page/Lead Type,\
+        breakdown dimension: an extra parameter only for line or bar charts that uses date as the primary dimension. The breakdown dimension will be one of the other non date dimensions,\
         y_axis_key: Sessions/ Effective sessions/ Users/ Revenue/ Transactions/ CVR/ Time on site/ Engagement rate/ROI,\
         StartDate: [yyyy-mm-dd], \
         End Date: [yyyy-mm-dd], \
@@ -65,10 +65,10 @@ if submit_button:
         Chart Template: A template is selected depending on the type of chart returned. Templates are Trend, for any time based charts, Table for tables and if neither of these is appropriate default can be set,\
         Todays date is 2023/09/08. Where a date range is not specified use a start date of 31 days ago and end date of yesterday,\
         The response should be a JSON object of these parameters.\
-        When a line or bar chart is requested, the default dimension should be time, and the extra parameter included for the breakdown dimension called BreakdownDimension.\
-        When two metrics are used in a bar or line chart y_axis_key can show multiple metrics seperated by commas.\
-        When a table is requested multiple dimensions or metrics, these can be listed in a comma seperated format against the Dimension or Metric parameters with a maximum of 2 dimensions and 4 metrics.\
-        If the request is too vague to make a clear decision on parameters please return just a parameter called follow-up: with a qualifying question such as please specify what you would like to see in a bit more detail."},\
+        When a line or bar chart is requested, the default dimension should be date, and the extra parameter included for the breakdown dimension called BreakdownDimension.\
+        When two metrics are used in a bar or line chart the y_axis_key can show two metrics seperated by commas.\
+        When a table requires multiple dimensions or metrics to be defined, these can be listed in a comma seperated format with a maximum of 2 dimensions and 4 metrics returned.\
+        If the request is too vague to make a clear decision on parameters please return only a parameter called follow-up: with a qualifying question such as please specify what you would like to see in a bit more detail."},\
         {"role": "user", "content": query_text}
         ]
         
