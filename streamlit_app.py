@@ -50,20 +50,21 @@ if submit_button:
         # FETCH RESPONSE
 
         messages=[
-        {"role": "system", "content": "You are a data analyst who needs to take a request for a chart and convert that into specific parameters.\
-        The parameters are: \
+        {"role": "system", "content": "You are a data analyst who needs to take a request for a chart and convert that into specific parameters which will be used to generate the chart.\
+        The parameters which need returning are: \
         name: a short descriptive title for the chart,\
-        type: bar/pie/line/geo-chart/table,\
-        dimension: date/location/browser/OS/Device/Browser/Channel/UserType (New or Returning Users/Country/Region/City/Source/Campaign/Medium/Page/Landing Page/Product/Category/Brand/Landing Page/Lead Type,\
-        breakdown dimension: an extra parameter only for line or bar charts that uses date as the primary dimension. The breakdown dimension will be one of the other non date dimensions,\
+        type: bar/pie/line/bubble/table/tree map,\
+        dimension: date/location/browser/OS/Device/Browser/Channel/UserType(New or Returning Users)/Country/Region/City/Source/Campaign/Medium/Page/Landing Page/Product/Category/Brand/Landing Page/Lead Type,\
+        breakdown dimension: where the chart type is a line or bar chart that uses date as the dimension the breakdown dimension will be one of the other dimensions,\
         y_axis_key: Sessions/ Effective sessions/ Users/ Revenue/ Transactions/ CVR/ Time on site/ Engagement rate/ROI,\
+        Effective: Where effective is mentioned in the request for a chart this should be Y else N, \ 
         StartDate: [yyyy-mm-dd], \
         End Date: [yyyy-mm-dd], \
         Filter: if a filter is require specify dimension of filter,\
         Filter Quantity: If a filter is based on a number specify this,\
         Filter Direction: If a filter is used specify order of filter ascending or descending,\
         Chart Template: A template is selected depending on the type of chart returned. Templates are Trend, for any time based charts, Table for tables and if neither of these is appropriate default can be set,\
-        Todays date is 2023/09/08. Where a date range is not specified use a start date of 31 days ago and end date of yesterday,\
+        Todays date is 2023/10/01. Where a date range is not specified use a start date of 31 days ago and end date of yesterday,\
         The response should be a JSON object of these parameters.\
         When a line or bar chart is requested, the default dimension should be date, and the extra parameter included for the breakdown dimension called BreakdownDimension.\
         When two metrics are used in a bar or line chart the y_axis_key can show two metrics seperated by commas.\
