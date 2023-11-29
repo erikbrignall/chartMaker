@@ -9,10 +9,10 @@ import streamlit as st
 
 st.set_page_config(page_title='Chart Maker - DEMO')
 st.image('logo-temp2.PNG', width=200)
-st.title('Chart Generator - DEMO')
-st.write('The following is a demo of the use of LLMs to generate parameters for use in a dynamic chart making webapp')
+st.title('API for chart generation - DEMO')
+st.write('The following is a test UI for the LLM chart generator parameters API. For incendium eyes only :-)')
 
-openai.api_key = st.secrets["OpenAIapikey"]
+#openai.api_key = st.secrets["OpenAIapikey"]
 
 # Input Query
 with st.form(key='my_form_to_submit'):
@@ -49,43 +49,26 @@ if submit_button:
         print("we have a query now")
         # FETCH RESPONSE
 
-        messages=[
-        {"role": "system", "content": "You are a data analyst who needs to take a request for a chart and convert that into specific parameters which will be used to generate the chart.\
-        The parameters which need returning are: \
-        name: a short descriptive title for the chart,\
-        type: bar/pie/line/bubble/table/tree map,\
-        dimension: date/location/browser/OS/Device/Browser/Channel/UserType(New or Returning Users)/Country/Region/City/Source/Campaign/Medium/Page/Landing Page/Product/Category/Brand/Landing Page/Lead Type,\
-        breakdown dimension: where the chart type is a line or bar chart that uses date as the dimension the breakdown dimension will be one of the other dimensions,\
-        y_axis_key: Sessions/ Effective sessions/ Users/ Revenue/ Transactions/ CVR/ Time on site/ Engagement rate/ROI,\
-        Effective: Where effective is mentioned in the request for a chart this should be Y else N, \ 
-        StartDate: [yyyy-mm-dd], \
-        End Date: [yyyy-mm-dd], \
-        Filter: if a filter is require specify dimension of filter,\
-        Filter Quantity: If a filter is based on a number specify this,\
-        Filter Direction: If a filter is used specify order of filter ascending or descending,\
-        Chart Template: A template is selected depending on the type of chart returned. Templates are Trend, for any time based charts, Table for tables and if neither of these is appropriate default can be set,\
-        Todays date is 2023/10/01. Where a date range is not specified use a start date of 31 days ago and end date of yesterday,\
-        The response should be a JSON object of these parameters.\
-        When a line or bar chart is requested, the default dimension should be date, and the extra parameter included for the breakdown dimension called BreakdownDimension.\
-        When two metrics are used in a bar or line chart the y_axis_key can show two metrics seperated by commas.\
-        When a table requires multiple dimensions or metrics to be defined, these can be listed in a comma seperated format with a maximum of 2 dimensions and 4 metrics returned.\
-        The dimension parameter and y_axis_key must always contain at least 1 value."},\
-        {"role": "user", "content": query_text}
-        ]
-        
-        response = openai.ChatCompletion.create(
-            model='gpt-3.5-turbo',
-            temperature = 0.1,
-            stop = None,
-            messages=messages)
-        
-        
-        response_text = response.choices[0].message.content
-        response_text = response_text.replace('\n', ' ').lower()
+        url = "https://europe-west2-alt24-developments.cloudfunctions.net/chartmaker2"
 
-        LLMresponse = response_text
+        querystring = query_text
+        
+        apikey = "aRTg43vbD33x"
+        request_data = {"input": querystring, "apikey": apikey}
+        start_time = time.time()
+        response = requests.post(url, json=request_data)
+        end_time = time.time()
+        
+        LLMresponse = response
         st.write("Here is the JSON for the chart generation:")
         st.json(LLMresponse)
+    
+        #print(response.status_code)
+        #print(response.json())
+        #print(response)
+        
+        response_time = end_time - start_time
+        print(f"API Response Time: {response_time} seconds")
         
         ## extract individual elements from response
         
@@ -103,4 +86,4 @@ if submit_button:
         #pattern = r'places: (.*)'
         #match = re.findall(pattern, response_text)
         #places = match[0]
-        #placeurl = quote(places)
+        #placeurl = quote(places)'''
