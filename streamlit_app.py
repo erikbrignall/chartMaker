@@ -54,7 +54,7 @@ if submit_button:
         
         apikey = "aRTg43vbD33x"
         request_data = {"input": query_text, "apikey": apikey}
-        #print(request_data)
+        st.write(request_data)
         start_time = time.time()
         response = requests.post(url, json=request_data)
         end_time = time.time()
@@ -68,7 +68,7 @@ if submit_button:
         #print(response)
         
         response_time = end_time - start_time
-        print(f"API Response Time: {response_time} seconds")
+       st.write(f"API Response Time: {response_time} seconds")
         
         ## extract individual elements from response
         
