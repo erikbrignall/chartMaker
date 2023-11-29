@@ -46,16 +46,15 @@ def extract_values(obj, key):
     
 if submit_button:    
 #if query_text is not None:   
-        print("we have a query now")
+        #print("we have a query now")
         # FETCH RESPONSE
+        st.write(query_text)
 
         url = "https://europe-west2-alt24-developments.cloudfunctions.net/chartmaker2"
-
-        querystring = query_text
         
         apikey = "aRTg43vbD33x"
-        request_data = {"input": querystring, "apikey": apikey}
-        print(request_data)
+        request_data = {"input": query_text, "apikey": apikey}
+        #print(request_data)
         start_time = time.time()
         response = requests.post(url, json=request_data)
         end_time = time.time()
