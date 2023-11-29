@@ -55,7 +55,7 @@ if submit_button:
         
         apikey = "aRTg43vbD33x"
         request_data = {"input": querystring, "apikey": apikey}
-        print(request_data.json())
+        print(request_data)
         start_time = time.time()
         response = requests.post(url, json=request_data)
         end_time = time.time()
