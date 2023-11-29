@@ -62,7 +62,7 @@ if submit_button:
         LLMresponse = response
         st.write("Here is the JSON for the chart generation:")
         #st.json(LLMresponse)
-        st.write(response)
+        st.write(response.json())
         #print(response.status_code)
         #print(response.json())
         #print(response)
