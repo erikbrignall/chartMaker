@@ -48,7 +48,7 @@ if submit_button:
 #if query_text is not None:   
         #print("we have a query now")
         # FETCH RESPONSE
-        st.write(query_text)
+        st.write("here is the json request:")
 
         url = "https://europe-west2-alt24-developments.cloudfunctions.net/chartmaker2"
         
@@ -60,7 +60,7 @@ if submit_button:
         end_time = time.time()
         
         LLMresponse = response
-        st.write("Here is the JSON for the chart generation:")
+        st.write("Here is the JSON response:")
         #st.json(LLMresponse)
         st.write(response.json())
         #print(response.status_code)
