@@ -68,7 +68,7 @@ if submit_button:
         #print(response)
         
         response_time = end_time - start_time
-       st.write(f"API Response Time: {response_time} seconds")
+        st.write(f"API Response Time: {response_time} seconds")
         
         ## extract individual elements from response
         
