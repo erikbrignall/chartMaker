@@ -52,7 +52,7 @@ if submit_button:
 
         url = "https://europe-west2-alt24-developments.cloudfunctions.net/chartmaker2"
         
-        apikey = "aRTg43vbD33x"
+        apikey = "xxxx"
         request_data = {"input": query_text, "apikey": apikey}
         st.write(request_data)
         start_time = time.time()
